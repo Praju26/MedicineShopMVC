@@ -1,0 +1,71 @@
+﻿@model MedicineDetailViewModel
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+<div>
+    <h4>Medicine</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Medicine.Id)
+        </dt>
+        <dd class="col-sm-4">
+            @{int id = (int)ViewData["MedicineId"];} @*ViewData needs to be casted unlike ViewBag*@
+            @id
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MedicineDetailInfo.Id)
+        </dt>
+        <dd class="col-sm-4">
+            @Html.DisplayFor(model => model.MedicineDetailInfo.Id)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Medicine.Medicine_Name)
+        </dt>
+        <dd class="col-sm-4">
+            @Html.DisplayFor(model => model.Medicine.Medicine_Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MedicineDetailInfo.Medicine_Cost_Price)
+        </dt>
+        <dd class="col-sm-4">
+            @Html.DisplayFor(model => model.MedicineDetailInfo.Medicine_Cost_Price)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Medicine.Medicine_Type)
+        </dt>
+        <dd class="col-sm-4">
+            @Html.DisplayFor(model => model.Medicine.Medicine_Type)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MedicineDetailInfo.MedicineCode_Code)
+        </dt>
+        <dd class="col-sm-4">
+            @Html.DisplayFor(model => model.MedicineDetailInfo.MedicineCode_Code)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Medicine.Medicine_Quantity)
+        </dt>
+        <dd class="col-sm-4">
+            @Html.DisplayFor(model => model.Medicine.Medicine_Quantity)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Medicine.Medicine_Price)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Medicine.Medicine_Price)
+        </dd>
+    </dl>
+</div>
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Medicine.Id">Edit</a> 
+    <partial name="_BackToListPartial" />
+</div>

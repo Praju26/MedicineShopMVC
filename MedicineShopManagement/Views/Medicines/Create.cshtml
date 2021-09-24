@@ -1,0 +1,63 @@
+﻿@model MedicineDetailViewModel
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>Medicine</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Medicine.Medicine_Name" class="control-label"></label>
+                <input asp-for="Medicine.Medicine_Name" class="form-control" required/>
+                <span asp-validation-for="Medicine.Medicine_Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Medicine.Medicine_Type" class="control-label"></label>
+                <input asp-for="Medicine.Medicine_Type" class="form-control" required/>
+                <span asp-validation-for="Medicine.Medicine_Type" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Medicine.Medicine._Quantity" class="control-label"></label>
+                <input asp-for="Medicine.Medicine._Quantity" class="form-control" />
+                <span asp-validation-for="Medicine.Medicine._Type" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Medicine.Medicine._Price" class="control-label"></label>
+                <input asp-for="Medicine..Medicine._Price" class="form-control" />
+                <span asp-validation-for="Medicine..Medicine._Price" class="text-danger"></span>
+            </div>
+
+            <h4>Product Extra Info</h4>
+            <hr />
+
+            <div class="form-group">
+                <label asp-for="MedicineDetailInfo.Medicine_Cost_Price" class="control-label"></label>
+                <input asp-for="MedicineDetailInfo.Medicine_Cost_Price" class="form-control" />
+                <span asp-validation-for="MedicineDetailInfo.Medicine_Cost_Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MedicineDetailInfo.MedicineCode_Code" class="control-label"></label>
+                <input asp-for="MedicineDetailInfo.MedicineCode_Code" class="form-control" />
+                <span asp-validation-for="MedicineDetailInfo.MedicineCode_Code" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <partial name="_BackToListPartial" />
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

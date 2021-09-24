@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <div class="col-sm-3">
+        @{
+            //List<string> list1 = ViewBag.ListA;
+            List<string> list1 = (List<string>) ViewData["ListA"];
+        }
+        <h4>PatientList which is higher visited at MedicineShop .</h4>
+        <ul>
+            @foreach (var patient in list1) {
+                <li>@epatient</li>
+            }
+        </ul>
+    </div>
+</div>
