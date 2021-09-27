@@ -54,7 +54,7 @@ namespace MedicineShopManagementAPIAuth.Controllers
         [HttpDelete("{id}")]
         public async void Delete(int id)
         {
-            var product = await _displayMedicineService.GetDisplayMedicineById(id);
+            var medicine = await _displayMedicineService.GetDisplayMedicineById(id);
             await _displayMedicineService.DeleteMedicine(medicine);
         }
     }
